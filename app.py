@@ -16,6 +16,9 @@ selected_features = ["age", "sex", "cp", "trestbps", "chol", "thalach", "exang",
 app = FastAPI()
 class HeartData(BaseModel):
     data: dict
+@app.get("/")
+def home():
+    return {"message": "FastAPI is successfully running on Render!"}
 @app.get("/hii")
 async def home_root():
     return {"message": "Welcome to the Heart Disease API"}
@@ -29,3 +32,7 @@ def predict(data: HeartData):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+
