@@ -16,7 +16,7 @@ selected_features = ["age", "sex", "cp", "trestbps", "chol", "thalach", "exang",
 app = FastAPI()
 class HeartData(BaseModel):
     data: dict
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def home():
     return {"message": "FastAPI is successfully running on Render!"}
 @app.get("/hii")
