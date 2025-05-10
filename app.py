@@ -4,10 +4,10 @@ import pickle
 import numpy as np
 
 # Load model & scaler
-with open("heart_api\\heart_disease_model.pkl", "rb") as model_file:
+with open("heart_disease_model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
-with open("heart_api\\scaler.pkl", "rb") as scaler_file:
+with open("scaler.pkl", "rb") as scaler_file:
     scaler = pickle.load(scaler_file)
 
 # Define feature names
